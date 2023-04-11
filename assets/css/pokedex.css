@@ -1,5 +1,9 @@
 @import url('./global.css');
 
+:root{
+    --pokelogo: url('https://corporate.pokemon.com/hero-pokeball-3430739968171e9fe85357e4739be704.png');
+}
+
 .pokemons {
     display: grid;
     grid-template-columns: 1fr;
@@ -15,26 +19,83 @@
     padding: 2rem 1rem;
     color: white;
     border-radius: 1rem;
+
+    background-position: top right;
+    background-size: 50%;
+    background-repeat: no-repeat;
 }
 
-.pokemon.normal { background-color: #a8a878; }
-.pokemon.fire { background-color: #f08030; }
-.pokemon.water { background-color: #6890f0; }
-.pokemon.grass { background-color: #78c850; }
-.pokemon.electric { background-color: #f8d030; }
-.pokemon.ice { background-color: #98d8d8; }
-.pokemon.ground { background-color: #e0c068; }
-.pokemon.flying { background-color: #a890f0; }
-.pokemon.poison { background-color: #a040a0; }
-.pokemon.fighting { background-color: #c03028; }
-.pokemon.psychic { background-color: #f85888; }
-.pokemon.dark { background-color: #705848; }
-.pokemon.rock { background-color: #b8a038; }
-.pokemon.bug { background-color: #a8b820; }
-.pokemon.ghost { background-color: #a8b820; }
-.pokemon.steel { background-color: #b8b8d0; }
-.pokemon.dragon { background-color: #7038f8; }
-.pokemon.fairy { background-color: #ffaec9; }
+.pokemon.normal {
+    background-image: linear-gradient(to right, rgba(168, 168, 120, .7), #a8a878), var(--pokelogo);
+    background-color: #a8a878;}
+.pokemon.fire {
+    background-image: linear-gradient(to right, rgba(240, 128, 48, .7), #f08030), var(--pokelogo);
+    background-color: #f08030;
+}
+.pokemon.water {
+    background-image: linear-gradient(to right, rgba(104, 144, 240, .7), #6890f0), var(--pokelogo);
+    background-color: #6890f0;
+}
+.pokemon.grass {
+    background-image: linear-gradient(to right, rgba(120, 200, 80, .7), #78c850), var(--pokelogo);
+    background-color: #78c850;
+}
+.pokemon.electric {
+    background-image: linear-gradient(to right, rgba(248, 208, 48, .7), #f8d030), var(--pokelogo);
+    background-color: #f8d030;
+}
+.pokemon.ice {
+    background-image: linear-gradient(to right, rgba(152, 216, 216, .7), #98d8d8), var(--pokelogo);
+    background-color: #98d8d8;
+}
+.pokemon.ground {
+    background-image: linear-gradient(to right, rgba(224, 192, 104, .7), #e0c068), var(--pokelogo);
+    background-color: #e0c068;
+}
+.pokemon.flying {
+    background-image: linear-gradient(to right, rgba(168, 144, 240, .7), #a890f0), var(--pokelogo);
+    background-color: #a890f0;
+}
+.pokemon.poison {
+    background-image: linear-gradient(to right, rgba(160, 64, 160, .7), #a040a0), var(--pokelogo);
+    background-color: #a040a0;
+}
+.pokemon.fighting {
+    background-image: linear-gradient(to right, rgba(192, 48, 40, .7), #c03028), var(--pokelogo);
+    background-color: #c03028;
+}
+.pokemon.psychic {
+    background-image: linear-gradient(to right, rgba(248, 88, 136, .7), #f85888), var(--pokelogo);
+    background-color: #f85888;
+}
+.pokemon.dark {
+    background-image: linear-gradient(to right, rgba(112, 88, 72, .7), #705848), var(--pokelogo);
+    background-color: #705848;
+}
+.pokemon.rock {
+    background-image: linear-gradient(to right, rgba(184, 160, 56, .7), #b8a038), var(--pokelogo);
+    background-color: #b8a038;
+}
+.pokemon.bug {
+    background-image: linear-gradient(to right, rgba(168, 184, 32, .7), #a8b820), var(--pokelogo);
+    background-color: #a8b820;
+}
+.pokemon.ghost {
+    background-image: linear-gradient(to right, rgba(111, 90, 153, .7), #6f5a99), var(--pokelogo);
+    background-color: #6f5a99;
+}
+.pokemon.steel {
+    background-image: linear-gradient(to right, rgba(184, 184, 208, .7), #b8b8d0), var(--pokelogo);
+    background-color: #b8b8d0;
+}
+.pokemon.dragon {
+    background-image: linear-gradient(to right, rgba(112, 56, 248, .7), #7038f8), var(--pokelogo);
+    background-color: #7038f8;
+}
+.pokemon.fairy {
+    background-image: linear-gradient(to right, rgba(255, 174, 201, .7), #ffaec9), var(--pokelogo);
+    background-color: #ffaec9;
+}
 
 .pokemon .name{
     text-transform: capitalize;
@@ -76,6 +137,23 @@
     max-width: 100%;
     height: 70px;
     align-self: flex-end;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button {
+    background-color: #6c79db;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: .4rem;
 }
 
 @media screen and (min-width: 350px){
