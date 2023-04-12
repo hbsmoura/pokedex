@@ -21,6 +21,11 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 @media screen and (min-width: 350px){
     .content {
         max-width: 350px;
