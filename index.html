@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />       
     <link rel="stylesheet" href="./assets/css/pokedex.css">
 </head>
 
@@ -22,7 +22,29 @@
         <div class="pagination">
             <button id="loadMoreBtn" type="button">Load More</button>
         </div>
+
+        <section class="modal hide" id="modal">
+            <section class="modal-about">
+                <button type="button" class="back-btn" id="backBtn">
+                    <i class="fa-solid fa-arrow-left-long fa-xl"></i>
+                </button>
+                <h1 class="name" id="modalName"></h1>
+                <span class="modal-number" id="modalNumber"></span>
+                <ol class="modal-types" id="modalTypeList"></ol>
+                <img id="modalImg" src="" alt="">
+            </section>
+            <section class="modal-info">
+                <ul class="modal-info-menu">
+                    <li class="modal-info-menu-item active">About</li>
+                    <li class="modal-info-menu-item">Base Stats</li>
+                    <li class="modal-info-menu-item">Evolution</li>
+                    <li class="modal-info-menu-item">Moves</li>
+                </ul>
+                <div id="modalIndoDesc"></div>
+            </section>            
+        </section>
     </section>
+
 
     <script src="assets/js/pokemon-model.js"></script>
     <script src="assets/js/poke-api.js"></script>
