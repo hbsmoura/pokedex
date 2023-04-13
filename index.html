@@ -35,18 +35,20 @@
             </section>
             <section class="modal-info">
                 <ul class="modal-info-menu">
-                    <li class="modal-info-menu-item active">About</li>
-                    <li class="modal-info-menu-item">Base Stats</li>
-                    <li class="modal-info-menu-item">Evolution</li>
-                    <li class="modal-info-menu-item">Moves</li>
+                    <li class="modal-info-menu-item active" id="modalInfoAbout">About</li>
+                    <li class="modal-info-menu-item" id="modalInfoBaseStat">Base Stats</li>
+                    <li class="modal-info-menu-item" id="modalInfoEvolution">Evolution</li>
+                    <li class="modal-info-menu-item" id="modalInfoMoves">Moves</li>
                 </ul>
-                <div id="modalIndoDesc"></div>
+                <div id="modalInfoDesc" class="modal-info-desc"></div>
             </section>            
         </section>
     </section>
 
-
-    <script src="assets/js/pokemon-model.js"></script>
+    <script src="assets/js/calculator.js"></script>
+    <script src="assets/js/model/pokemon-model.js"></script>
+    <script src="assets/js/model/pokemon-stat-model.js"></script>
+    <script src="assets/js/model/evolution-element-model.js"></script>
     <script src="assets/js/poke-api.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
