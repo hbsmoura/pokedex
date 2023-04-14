@@ -20,4 +20,8 @@ class Calculator {
         const chanceToBeMale = 100 - chanceToBeFemale;
         return [chanceToBeMale, chanceToBeFemale];
     }
+
+    static statPercentageProgress(value) {
+        return String(Math.round(value / 2.6)).concat('%');
+    }
 }
