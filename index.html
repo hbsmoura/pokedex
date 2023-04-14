@@ -23,7 +23,7 @@
             <button id="loadMoreBtn" type="button">Load More</button>
         </div>
 
-        <section class="modal hide" id="modal">
+        <section class="modal" id="modal">
             <section class="modal-about">
                 <button type="button" class="back-btn" id="backBtn">
                     <i class="fa-solid fa-arrow-left-long fa-xl"></i>
@@ -35,10 +35,10 @@
             </section>
             <section class="modal-info">
                 <ul class="modal-info-menu">
-                    <li class="modal-info-menu-item active" id="modalInfoAbout">About</li>
-                    <li class="modal-info-menu-item" id="modalInfoBaseStat">Base Stats</li>
-                    <li class="modal-info-menu-item" id="modalInfoEvolution">Evolution</li>
-                    <li class="modal-info-menu-item" id="modalInfoMoves">Moves</li>
+                    <li class="modal-info-menu-item active" id="modalInfoAbout" data-pokemon-number="0">About</li>
+                    <li class="modal-info-menu-item" id="modalInfoBaseStat" data-pokemon-number="0">Base Stats</li>
+                    <li class="modal-info-menu-item" id="modalInfoEvolution" data-pokemon-number="0">Evolution</li>
+                    <li class="modal-info-menu-item" id="modalInfoMoves" data-pokemon-number="0">Moves</li>
                 </ul>
                 <div id="modalInfoDesc" class="modal-info-desc"></div>
             </section>            
