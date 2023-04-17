@@ -57,6 +57,7 @@ function openModal(number) {
         pokemon.types.map(type => `<li class="modal-type">${type}</li>`).join('');
     modalImg.setAttribute('src', pokemon.pic);
     modalImg.setAttribute('alt', 'Picture of ' + pokemon.name);
+    modalImg.className = 'modal-img';
 
     Array.from(document.getElementsByClassName('modal-info-menu-item'))
         .forEach(el => el.setAttribute('data-pokemon-number', pokemon.number));
@@ -78,6 +79,7 @@ function closeModal() {
        
     modalImg.setAttribute('src', 'https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pokebola-Pok%C3%A9mon-PNG.png');
     modalImg.setAttribute('alt', 'Picture of pokeball');
+    modalImg.className = 'modal-img';
 
     Array.from(document.getElementsByClassName('modal-info-menu-item'))
         .forEach(el => el.setAttribute('data-pokemon-number', 0));
@@ -267,6 +269,75 @@ function showBaseStats(number) {
     modalInfoBaseStat.classList.add('active');    
 }
 
+function showEvolution(number) {
+    number = parseInt(number);
+    if(number === 0) {
+        modalInfoDesc.innerHTML = `
+            <div class="tf-tree tf-gap-sm evolution-tree">
+                <ul>
+                    <li>
+                        <span class="tf-nc">Pokeball</span>
+                        <ul>
+                            <li>
+                                <span  class="tf-nc">Pokeball 2</span>
+                                <ul>
+                                    <li>
+                                        <span  class="tf-nc">Pokeball 4</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span  class="tf-nc">Pokeball 3</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        `;
+    } else {
+        pokemon = globalPokemonList.find(pk => pk.number === number);
+        
+        const loop = (evItem) => {
+            if(evItem['evolves_to'].length === 0) {
+                return `
+                    <li>
+                        <span class="tf-nc">${evItem.species}</span>
+                    </li>
+                `;
+            }
+
+            return `<li>
+                        <span class="tf-nc">${evItem.species}</span>
+                        <ul>` + 
+                        evItem['evolves_to'].map(e => loop(e)).join('')
+                        + `</ul>
+                    </li>`;
+        }
+
+        modalInfoDesc.innerHTML = `
+        <div class="tf-tree tf-gap-sm evolution-tree">
+            <ul>
+                ${loop(pokemon.evolutionChain)}
+            </ul>
+        </div>
+        `;
+
+        Array.from(
+            document.getElementsByClassName('tf-nc')
+        ).filter(
+            (item) => item.textContent === pokemon.name
+        ).forEach(element => {
+            element.className = 'tf-nc ' + pokemon.types[0];
+            element.innerHTML = `<img src="${pokemon.pic}" class="evolution-pic"> ${element.innerHTML}`;
+        });
+
+    }    
+
+    Array.from(document.getElementsByClassName('modal-info-menu-item'))
+        .forEach(el => el.classList.remove('active'));
+    modalInfoEvolution.classList.add('active'); 
+}
+
 loadMoreBtn.addEventListener('click', () => {
     offset += limit;
     let newlimit = offset+limit;
@@ -283,6 +354,7 @@ backBtn.addEventListener('click', closeModal);
 
 modalInfoAbout.addEventListener('click', (ev) => showAbout(ev.target.getAttribute('data-pokemon-number')));
 modalInfoBaseStat.addEventListener('click', (ev) => showBaseStats(ev.target.getAttribute('data-pokemon-number')));
+modalInfoEvolution.addEventListener('click', (ev) => showEvolution(ev.target.getAttribute('data-pokemon-number')));
 
 document.onkeydown = (evt) => {    
     if (evt.key === 'Escape') closeModal();
