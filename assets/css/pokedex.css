@@ -1,5 +1,8 @@
 @import url('./global.css');
 @import url('./base64vars.css');
+@import url('https://unpkg.com/treeflex/dist/css/treeflex.css');
+
+/* Grade principal */
 
 .pokemons {
     display: grid;
@@ -26,70 +29,87 @@
     background-image: linear-gradient(to right, rgba(168, 168, 120, .7), #a8a878), var(--pokelogo);
     background-color: #a8a878;
 }
+
 .fire {
     background-image: linear-gradient(to right, rgba(240, 128, 48, .7), #f08030), var(--pokelogo);
     background-color: #f08030;
 }
+
 .water {
     background-image: linear-gradient(to right, rgba(104, 144, 240, .7), #6890f0), var(--pokelogo);
     background-color: #6890f0;
 }
+
 .grass {
     background-image: linear-gradient(to right, rgba(120, 200, 80, .7), #78c850), var(--pokelogo);
     background-color: #78c850;
 }
+
 .electric {
     background-image: linear-gradient(to right, rgba(248, 208, 48, .7), #f8d030), var(--pokelogo);
     background-color: #f8d030;
 }
+
 .ice {
     background-image: linear-gradient(to right, rgba(152, 216, 216, .7), #98d8d8), var(--pokelogo);
     background-color: #98d8d8;
 }
+
 .ground {
     background-image: linear-gradient(to right, rgba(224, 192, 104, .7), #e0c068), var(--pokelogo);
     background-color: #e0c068;
 }
+
 .flying {
     background-image: linear-gradient(to right, rgba(168, 144, 240, .7), #a890f0), var(--pokelogo);
     background-color: #a890f0;
 }
+
 .poison {
     background-image: linear-gradient(to right, rgba(160, 64, 160, .7), #a040a0), var(--pokelogo);
     background-color: #a040a0;
 }
+
 .fighting {
     background-image: linear-gradient(to right, rgba(192, 48, 40, .7), #c03028), var(--pokelogo);
     background-color: #c03028;
 }
+
 .psychic {
     background-image: linear-gradient(to right, rgba(248, 88, 136, .7), #f85888), var(--pokelogo);
     background-color: #f85888;
 }
+
 .dark {
     background-image: linear-gradient(to right, rgba(112, 88, 72, .7), #705848), var(--pokelogo);
     background-color: #705848;
 }
+
 .rock {
     background-image: linear-gradient(to right, rgba(184, 160, 56, .7), #b8a038), var(--pokelogo);
     background-color: #b8a038;
 }
+
 .bug {
     background-image: linear-gradient(to right, rgba(168, 184, 32, .7), #a8b820), var(--pokelogo);
     background-color: #a8b820;
 }
+
 .ghost {
     background-image: linear-gradient(to right, rgba(111, 90, 153, .7), #6f5a99), var(--pokelogo);
     background-color: #6f5a99;
 }
+
 .steel {
     background-image: linear-gradient(to right, rgba(184, 184, 208, .7), #b8b8d0), var(--pokelogo);
     background-color: #b8b8d0;
 }
+
 .dragon {
     background-image: linear-gradient(to right, rgba(112, 56, 248, .7), #7038f8), var(--pokelogo);
     background-color: #7038f8;
 }
+
 .fairy {
     background-image: linear-gradient(to right, rgba(255, 174, 201, .7), #ffaec9), var(--pokelogo);
     background-color: #ffaec9;
@@ -154,8 +174,10 @@
     padding: .4rem;
 }
 
+/* Modal */
+
 .modal {
-    display:flex;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 0;
@@ -187,16 +209,16 @@
     border: none;
     border-radius: .7rem;
     text-decoration: none;
-    color: white;    
+    color: white;
 }
 
-.back-btn:hover{
+.back-btn:hover {
     background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, .2));
 }
 
-.modal-about{
+.modal-about {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     padding: 2rem;
 }
 
@@ -222,11 +244,13 @@
     text-shadow: .1rem .1rem .2rem rgba(0, 0, 0, .4);
 }
 
-.modal img {
+.modal-img {
     width: 50%;
     margin: 0 auto;
     transform: translateY(4rem);
 }
+
+/* Modal info*/
 
 .modal-info {
     background-color: white;
@@ -258,12 +282,26 @@ table {
     border-spacing: 1rem;
 }
 
-th, td { text-align: left; }
-th { width: 30%; }
-td { width: 70%; }
+th,
+td {
+    text-align: left;
+}
 
-.fa-mars{ color: #0f89ca; }
-.fa-venus{ color: #e40dd2; }
+th {
+    width: 30%;
+}
+
+td {
+    width: 70%;
+}
+
+.fa-mars {
+    color: #0f89ca;
+}
+
+.fa-venus {
+    color: #e40dd2;
+}
 
 .baby-legendary-mythical {
     display: flex;
@@ -279,36 +317,111 @@ td { width: 70%; }
     background-repeat: no-repeat;
 }
 
-.hm-baby { background: var(--img-baby-url); }
-.hm-baby::before{ content: "Baby"; }
-.hm-baby-disable { background: var(--img-baby-disable-url); }
+.hm-baby {
+    background: var(--img-baby-url);
+}
 
-.hm-legendary {background: var(--img-legendary-url); }
-.hm-legendary::before{ content: "Legend"; }
-.hm-legendary-disable { background: var(--img-legendary-disable-url); }
+.hm-baby::before {
+    content: "Baby";
+}
 
-.hm-mythic { background: var(--img-mythic-url); }
-.hm-mythic::before{ content: "Myth"; }
-.hm-mythic-disable { background: var(--img-mythic-disable-url); }
+.hm-baby-disable {
+    background: var(--img-baby-disable-url);
+}
+
+.hm-legendary {
+    background: var(--img-legendary-url);
+}
+
+.hm-legendary::before {
+    content: "Legend";
+}
+
+.hm-legendary-disable {
+    background: var(--img-legendary-disable-url);
+}
+
+.hm-mythic {
+    background: var(--img-mythic-url);
+}
+
+.hm-mythic::before {
+    content: "Myth";
+}
+
+.hm-mythic-disable {
+    background: var(--img-mythic-disable-url);
+}
 
 .stat-wrapper {
     background-color: #dbdbda;
     border-radius: 1rem;
 }
 
-.progress-bar{
+.progress-bar {
     color: white;
     padding: 0 0 0 .2rem;
     border-radius: inherit;
 }
 
-.stat-hp { background-color: #c03028; }
-.stat-attack { background-color: #f08030; }
-.stat-defense { background-color: #f8d030; }
-.stat-special-attack { background-color: #6890f0; }
-.stat-special-defense { background-color: #78c850; }
-.stat-speed { background-color: #ffaec9; }
-.stat-total { background-color: #7038f8; }
+.stat-hp {
+    background-color: #c03028;
+}
+
+.stat-attack {
+    background-color: #f08030;
+}
+
+.stat-defense {
+    background-color: #f8d030;
+}
+
+.stat-special-attack {
+    background-color: #6890f0;
+}
+
+.stat-special-defense {
+    background-color: #78c850;
+}
+
+.stat-speed {
+    background-color: #ffaec9;
+}
+
+.stat-total {
+    background-color: #7038f8;
+}
+
+.evolution-tree {
+    display: flex;
+    justify-content: center;
+}
+
+.evolution-tree .tf-nc {
+    background-color: grey;
+    border-color: grey;
+    color: white;
+    padding: .5rem;
+    border-radius: 1rem;
+    text-transform: capitalize;
+}
+
+.evolution-tree .tf-nc:before,
+.evolution-tree .tf-nc:after {
+    border-left-color: grey;
+    border-left-width: 2px;
+}
+
+.evolution-tree li li:before {
+    border-top-color: grey;
+    border-top-width: 2px;
+}
+
+.evolution-pic {
+    height: 4rem;
+    width: auto;
+    transform: scaleX(-1);
+}
 
 @media screen and (min-width: 350px) {
     .pokemons {
