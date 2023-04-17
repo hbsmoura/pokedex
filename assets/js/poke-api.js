@@ -9,9 +9,9 @@ async function convertPokeApiDetailsToPokemon(pokeDetails) {
     const pokemonStats = pokeDetails.stats.map(s => new PokemonStat(s.stat.name, s['base_stat']));
     const pokemonMoves = pokeDetails.moves.map(m => m.move.name);
 
-    const speciesInfos = await pokeApi.getSpeciesInfo(pokeDetails.species.url);
+    const speciesInfos = await pokeApi.fetchApi(pokeDetails.species.url);
 
-    const apiEvolutionChain = await pokeApi.getEvolutionChain(speciesInfos['evolution_chain'].url);    
+    const apiEvolutionChain = await pokeApi.fetchApi(speciesInfos['evolution_chain'].url);    
     const evolutionElement = pokeApi.convertApiEvChainToEvElement(apiEvolutionChain.chain);
 
     return new Pokemon(
@@ -31,11 +31,7 @@ pokeApi.convertApiEvChainToEvElement = (chain) => {
     );
 }
 
-pokeApi.getSpeciesInfo = async (url) => {
-    return fetch(url).then(r => r.json()).catch(console.log);
-}
-
-pokeApi.getEvolutionChain = async (url) => {
+pokeApi.fetchApi = async (url) => {
     return fetch(url).then(r => r.json()).catch(console.log);
 }
 
