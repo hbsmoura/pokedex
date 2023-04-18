@@ -9,12 +9,12 @@ class Pokemon {
     abilities;
     stats;
     moves;
-    habitat; /* species.habitat.name*/
-    genderRate; /* species.gender_rate*/
-    eggGroups; /* species.egg_groups[].name array */
-    isBaby; /* species.is_baby */
-    isLegendary; /* species.is_legendary */
-    isMythical; /* species.is_mythical */
+    habitat;
+    genderRate;
+    eggGroups;
+    isBaby;
+    isLegendary;
+    isMythical;
     evolutionChain;
 
     constructor(

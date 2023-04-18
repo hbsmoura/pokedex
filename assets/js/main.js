@@ -338,6 +338,39 @@ function showEvolution(number) {
     modalInfoEvolution.classList.add('active'); 
 }
 
+function showMoves(number) {
+    number = parseInt(number);
+    if(number === 0) {
+        modalInfoDesc.innerHTML = `
+            <table>
+                <tr>
+                    <th>Cacth</th>
+                    <td>Capture pokemons according to some conditions.</td>
+                </tr>
+                <tr>
+                    <th>Contain</th>
+                    <td>Stores the energy of a pokemon.</td>
+                </tr>
+                <tr>
+                    <th>Reduce-size</th>
+                    <td>Can be size reduced for carry purposes.</td>
+                </tr>
+            </table>
+        `;
+    } else {
+        pokemon = globalPokemonList.find(pk => pk.number === number);
+
+        const content = pokemon.moves.map(name => `<li>${name.replace('-', ' ')}</li>`).join('');
+        modalInfoDesc.innerHTML = `
+            <ul class="move-list">${content}</ul>
+        `;
+    }
+
+    Array.from(document.getElementsByClassName('modal-info-menu-item'))
+        .forEach(el => el.classList.remove('active'));
+    modalInfoMoves.classList.add('active');
+}
+
 loadMoreBtn.addEventListener('click', () => {
     offset += limit;
     let newlimit = offset+limit;
@@ -355,6 +388,7 @@ backBtn.addEventListener('click', closeModal);
 modalInfoAbout.addEventListener('click', (ev) => showAbout(ev.target.getAttribute('data-pokemon-number')));
 modalInfoBaseStat.addEventListener('click', (ev) => showBaseStats(ev.target.getAttribute('data-pokemon-number')));
 modalInfoEvolution.addEventListener('click', (ev) => showEvolution(ev.target.getAttribute('data-pokemon-number')));
+modalInfoMoves.addEventListener('click', (ev) => showMoves(ev.target.getAttribute('data-pokemon-number')));
 
 document.onkeydown = (evt) => {    
     if (evt.key === 'Escape') closeModal();
