@@ -24,24 +24,26 @@
         </div>
 
         <section class="modal" id="modal">
-            <section class="modal-about">
-                <button type="button" class="back-btn" id="backBtn">
-                    <i class="fa-solid fa-arrow-left-long fa-xl"></i>
-                </button>
-                <h1 class="name" id="modalName"></h1>
-                <span class="modal-number" id="modalNumber"></span>
-                <ol class="modal-types" id="modalTypeList"></ol>
-                <img id="modalImg" src="" alt="">
-            </section>
-            <section class="modal-info">
-                <ul class="modal-info-menu">
-                    <li class="modal-info-menu-item active" id="modalInfoAbout" data-pokemon-number="0">About</li>
-                    <li class="modal-info-menu-item" id="modalInfoBaseStat" data-pokemon-number="0">Base Stats</li>
-                    <li class="modal-info-menu-item" id="modalInfoEvolution" data-pokemon-number="0">Evolution</li>
-                    <li class="modal-info-menu-item" id="modalInfoMoves" data-pokemon-number="0">Moves</li>
-                </ul>
-                <div id="modalInfoDesc" class="modal-info-desc"></div>
-            </section>            
+            <div class="modal-container">
+                <section class="modal-about">
+                    <button type="button" class="back-btn" id="backBtn">
+                        <i class="fa-solid fa-arrow-left-long fa-xl"></i>
+                    </button>
+                    <h1 class="name" id="modalName"></h1>
+                    <span class="modal-number" id="modalNumber"></span>
+                    <ol class="modal-types" id="modalTypeList"></ol>
+                    <img id="modalImg" src="">
+                </section>
+                <section class="modal-info">
+                    <ul class="modal-info-menu">
+                        <li class="modal-info-menu-item active" id="modalInfoAbout" data-pokemon-number="0">About</li>
+                        <li class="modal-info-menu-item" id="modalInfoBaseStat" data-pokemon-number="0">Base Stats</li>
+                        <li class="modal-info-menu-item" id="modalInfoEvolution" data-pokemon-number="0">Evolution</li>
+                        <li class="modal-info-menu-item" id="modalInfoMoves" data-pokemon-number="0">Moves</li>
+                    </ul>
+                    <div id="modalInfoDesc" class="modal-info-desc"></div>
+                </section>
+            </div>           
         </section>
     </section>
 
